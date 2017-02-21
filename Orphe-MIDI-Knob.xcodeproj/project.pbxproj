@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B2D2D111E5C41A5001F9EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D2D101E5C41A5001F9EF7 /* AppDelegate.swift */; };
+		5B2D2D131E5C41A5001F9EF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D2D121E5C41A5001F9EF7 /* ViewController.swift */; };
+		5B2D2D151E5C41A5001F9EF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D2D141E5C41A5001F9EF7 /* Assets.xcassets */; };
+		5B2D2D181E5C41A5001F9EF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D2D161E5C41A5001F9EF7 /* Main.storyboard */; };
+		5B2D2D231E5C41A5001F9EF7 /* Orphe_MIDI_KnobTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D2D221E5C41A5001F9EF7 /* Orphe_MIDI_KnobTests.swift */; };
+		5B2D2D2E1E5C41A5001F9EF7 /* Orphe_MIDI_KnobUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2D2D2D1E5C41A5001F9EF7 /* Orphe_MIDI_KnobUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B2D2D1F1E5C41A5001F9EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2D2D051E5C41A5001F9EF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2D2D0C1E5C41A5001F9EF7;
+			remoteInfo = "Orphe-MIDI-Knob";
+		};
+		5B2D2D2A1E5C41A5001F9EF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2D2D051E5C41A5001F9EF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2D2D0C1E5C41A5001F9EF7;
+			remoteInfo = "Orphe-MIDI-Knob";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B2D2D0D1E5C41A5001F9EF7 /* Orphe-MIDI-Knob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Orphe-MIDI-Knob.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2D2D101E5C41A5001F9EF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B2D2D121E5C41A5001F9EF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B2D2D141E5C41A5001F9EF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B2D2D171E5C41A5001F9EF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B2D2D191E5C41A5001F9EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2D2D1E1E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orphe-MIDI-KnobTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2D2D221E5C41A5001F9EF7 /* Orphe_MIDI_KnobTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orphe_MIDI_KnobTests.swift; sourceTree = "<group>"; };
+		5B2D2D241E5C41A5001F9EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2D2D291E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Orphe-MIDI-KnobUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2D2D2D1E5C41A5001F9EF7 /* Orphe_MIDI_KnobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orphe_MIDI_KnobUITests.swift; sourceTree = "<group>"; };
+		5B2D2D2F1E5C41A5001F9EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B2D2D0A1E5C41A5001F9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2D2D1B1E5C41A5001F9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2D2D261E5C41A5001F9EF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B2D2D041E5C41A5001F9EF7 = {
+			isa = PBXGroup;
+			children = (
+				5B2D2D0F1E5C41A5001F9EF7 /* Orphe-MIDI-Knob */,
+				5B2D2D211E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests */,
+				5B2D2D2C1E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests */,
+				5B2D2D0E1E5C41A5001F9EF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B2D2D0E1E5C41A5001F9EF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D2D0D1E5C41A5001F9EF7 /* Orphe-MIDI-Knob.app */,
+				5B2D2D1E1E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests.xctest */,
+				5B2D2D291E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B2D2D0F1E5C41A5001F9EF7 /* Orphe-MIDI-Knob */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D2D101E5C41A5001F9EF7 /* AppDelegate.swift */,
+				5B2D2D121E5C41A5001F9EF7 /* ViewController.swift */,
+				5B2D2D141E5C41A5001F9EF7 /* Assets.xcassets */,
+				5B2D2D161E5C41A5001F9EF7 /* Main.storyboard */,
+				5B2D2D191E5C41A5001F9EF7 /* Info.plist */,
+			);
+			path = "Orphe-MIDI-Knob";
+			sourceTree = "<group>";
+		};
+		5B2D2D211E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D2D221E5C41A5001F9EF7 /* Orphe_MIDI_KnobTests.swift */,
+				5B2D2D241E5C41A5001F9EF7 /* Info.plist */,
+			);
+			path = "Orphe-MIDI-KnobTests";
+			sourceTree = "<group>";
+		};
+		5B2D2D2C1E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B2D2D2D1E5C41A5001F9EF7 /* Orphe_MIDI_KnobUITests.swift */,
+				5B2D2D2F1E5C41A5001F9EF7 /* Info.plist */,
+			);
+			path = "Orphe-MIDI-KnobUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B2D2D0C1E5C41A5001F9EF7 /* Orphe-MIDI-Knob */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2D2D321E5C41A5001F9EF7 /* Build configuration list for PBXNativeTarget "Orphe-MIDI-Knob" */;
+			buildPhases = (
+				5B2D2D091E5C41A5001F9EF7 /* Sources */,
+				5B2D2D0A1E5C41A5001F9EF7 /* Frameworks */,
+				5B2D2D0B1E5C41A5001F9EF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Orphe-MIDI-Knob";
+			productName = "Orphe-MIDI-Knob";
+			productReference = 5B2D2D0D1E5C41A5001F9EF7 /* Orphe-MIDI-Knob.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B2D2D1D1E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2D2D351E5C41A5001F9EF7 /* Build configuration list for PBXNativeTarget "Orphe-MIDI-KnobTests" */;
+			buildPhases = (
+				5B2D2D1A1E5C41A5001F9EF7 /* Sources */,
+				5B2D2D1B1E5C41A5001F9EF7 /* Frameworks */,
+				5B2D2D1C1E5C41A5001F9EF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B2D2D201E5C41A5001F9EF7 /* PBXTargetDependency */,
+			);
+			name = "Orphe-MIDI-KnobTests";
+			productName = "Orphe-MIDI-KnobTests";
+			productReference = 5B2D2D1E1E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B2D2D281E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2D2D381E5C41A5001F9EF7 /* Build configuration list for PBXNativeTarget "Orphe-MIDI-KnobUITests" */;
+			buildPhases = (
+				5B2D2D251E5C41A5001F9EF7 /* Sources */,
+				5B2D2D261E5C41A5001F9EF7 /* Frameworks */,
+				5B2D2D271E5C41A5001F9EF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B2D2D2B1E5C41A5001F9EF7 /* PBXTargetDependency */,
+			);
+			name = "Orphe-MIDI-KnobUITests";
+			productName = "Orphe-MIDI-KnobUITests";
+			productReference = 5B2D2D291E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B2D2D051E5C41A5001F9EF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "noaki-takuya";
+				TargetAttributes = {
+					5B2D2D0C1E5C41A5001F9EF7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					5B2D2D1D1E5C41A5001F9EF7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B2D2D0C1E5C41A5001F9EF7;
+					};
+					5B2D2D281E5C41A5001F9EF7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5B2D2D0C1E5C41A5001F9EF7;
+					};
+				};
+			};
+			buildConfigurationList = 5B2D2D081E5C41A5001F9EF7 /* Build configuration list for PBXProject "Orphe-MIDI-Knob" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B2D2D041E5C41A5001F9EF7;
+			productRefGroup = 5B2D2D0E1E5C41A5001F9EF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B2D2D0C1E5C41A5001F9EF7 /* Orphe-MIDI-Knob */,
+				5B2D2D1D1E5C41A5001F9EF7 /* Orphe-MIDI-KnobTests */,
+				5B2D2D281E5C41A5001F9EF7 /* Orphe-MIDI-KnobUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B2D2D0B1E5C41A5001F9EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2D2D151E5C41A5001F9EF7 /* Assets.xcassets in Resources */,
+				5B2D2D181E5C41A5001F9EF7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2D2D1C1E5C41A5001F9EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2D2D271E5C41A5001F9EF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B2D2D091E5C41A5001F9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2D2D131E5C41A5001F9EF7 /* ViewController.swift in Sources */,
+				5B2D2D111E5C41A5001F9EF7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2D2D1A1E5C41A5001F9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2D2D231E5C41A5001F9EF7 /* Orphe_MIDI_KnobTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2D2D251E5C41A5001F9EF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2D2D2E1E5C41A5001F9EF7 /* Orphe_MIDI_KnobUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B2D2D201E5C41A5001F9EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2D2D0C1E5C41A5001F9EF7 /* Orphe-MIDI-Knob */;
+			targetProxy = 5B2D2D1F1E5C41A5001F9EF7 /* PBXContainerItemProxy */;
+		};
+		5B2D2D2B1E5C41A5001F9EF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2D2D0C1E5C41A5001F9EF7 /* Orphe-MIDI-Knob */;
+			targetProxy = 5B2D2D2A1E5C41A5001F9EF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B2D2D161E5C41A5001F9EF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2D2D171E5C41A5001F9EF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B2D2D301E5C41A5001F9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5B2D2D311E5C41A5001F9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		5B2D2D331E5C41A5001F9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Orphe-MIDI-Knob/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nokkii.Orphe-MIDI-Knob";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		5B2D2D341E5C41A5001F9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Orphe-MIDI-Knob/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nokkii.Orphe-MIDI-Knob";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		5B2D2D361E5C41A5001F9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Orphe-MIDI-KnobTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nokkii.Orphe-MIDI-KnobTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orphe-MIDI-Knob.app/Contents/MacOS/Orphe-MIDI-Knob";
+			};
+			name = Debug;
+		};
+		5B2D2D371E5C41A5001F9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Orphe-MIDI-KnobTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nokkii.Orphe-MIDI-KnobTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Orphe-MIDI-Knob.app/Contents/MacOS/Orphe-MIDI-Knob";
+			};
+			name = Release;
+		};
+		5B2D2D391E5C41A5001F9EF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Orphe-MIDI-KnobUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nokkii.Orphe-MIDI-KnobUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Orphe-MIDI-Knob";
+			};
+			name = Debug;
+		};
+		5B2D2D3A1E5C41A5001F9EF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Orphe-MIDI-KnobUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nokkii.Orphe-MIDI-KnobUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "Orphe-MIDI-Knob";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B2D2D081E5C41A5001F9EF7 /* Build configuration list for PBXProject "Orphe-MIDI-Knob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2D2D301E5C41A5001F9EF7 /* Debug */,
+				5B2D2D311E5C41A5001F9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2D2D321E5C41A5001F9EF7 /* Build configuration list for PBXNativeTarget "Orphe-MIDI-Knob" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2D2D331E5C41A5001F9EF7 /* Debug */,
+				5B2D2D341E5C41A5001F9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5B2D2D351E5C41A5001F9EF7 /* Build configuration list for PBXNativeTarget "Orphe-MIDI-KnobTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2D2D361E5C41A5001F9EF7 /* Debug */,
+				5B2D2D371E5C41A5001F9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5B2D2D381E5C41A5001F9EF7 /* Build configuration list for PBXNativeTarget "Orphe-MIDI-KnobUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2D2D391E5C41A5001F9EF7 /* Debug */,
+				5B2D2D3A1E5C41A5001F9EF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B2D2D051E5C41A5001F9EF7 /* Project object */;
+}
