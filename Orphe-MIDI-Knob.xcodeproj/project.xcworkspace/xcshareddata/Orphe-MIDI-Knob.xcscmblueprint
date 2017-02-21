@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1A180FF53D7A83A55923940F7764A8C27D3CC607",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5D9834C2248997F4FF0BCD60C4CB47DA22BE5E90" : 9223372036854775807,
+    "1A180FF53D7A83A55923940F7764A8C27D3CC607" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B8389029-DDAC-4FFA-AB7F-37778DE56983",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5D9834C2248997F4FF0BCD60C4CB47DA22BE5E90" : "Orphe-Swift-SDK\/",
+    "1A180FF53D7A83A55923940F7764A8C27D3CC607" : "Orphe-MIDI-Knob\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Orphe-MIDI-Knob",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Orphe-MIDI-Knob.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:nokkii\/Orphe-MIDI-Knob.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1A180FF53D7A83A55923940F7764A8C27D3CC607"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:no-new-folk\/Orphe-Swift-SDK.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D9834C2248997F4FF0BCD60C4CB47DA22BE5E90"
+    }
+  ]
+}
