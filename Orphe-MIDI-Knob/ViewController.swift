@@ -11,10 +11,10 @@ import Orphe
 import CoreMIDI
 
 class ViewController: NSViewController {
-    
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var leftSensorLabel: NSTextField!
     @IBOutlet weak var rightSensorLabel: NSTextField!
+    @IBOutlet weak var rightSwitchButton: NSButton!
     
     var rssiTimer: Timer?
     
@@ -32,6 +32,9 @@ class ViewController: NSViewController {
     var upper_euler_r0 = Double(0.0)
     var calibrate_rcnt = 0
     var calibrate_rtmp = Double(0.0)
+    
+    var leftOrphe: ORPData?
+    var rightOrphe: ORPData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +59,13 @@ class ViewController: NSViewController {
         rssiTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(ViewController.readRSSI), userInfo: nil, repeats: true)
     }
     
+    
     override var representedObject: Any? {
         didSet {
             
         }
     }
+    
     
     func updateCellsState(){
         for (index, orp) in ORPManager.sharedInstance.availableORPDataArray.enumerated(){
@@ -80,19 +85,29 @@ class ViewController: NSViewController {
         }
     }
     
-    override func keyDown(with theEvent: NSEvent) {
+    
+    override func keyDown(with theEvent: NSEvent){
         super.keyDown(with: theEvent)
-        if let lightNum:UInt8 = UInt8(theEvent.characters!){
-            for var orp in ORPManager.sharedInstance.connectedORPDataArray{
-                ORPManager.sharedInstance.triggerLight(lightNum: lightNum, orphe: &orp)
+        
+        if let lightNum:UInt8 = UInt8(theEvent.characters!) {
+            for orp in ORPManager.sharedInstance.connectedORPDataArray{
+                orp.triggerLight(lightNum: lightNum)
             }
         }
     }
     
+    
+    @IBAction func rightSwitchButtonAction(sender : AnyObject) {
+        if (leftOrphe != nil) {
+            leftOrphe?.requestChangeSide(ORPSide.right)
+            rightOrphe = leftOrphe
+            leftOrphe = nil
+        }
+    }
 }
 
-extension  ViewController: NSTableViewDelegate{
-    
+
+extension ViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView?{
         let cellIdentifier: String = "NameCell"
         
@@ -110,34 +125,41 @@ extension  ViewController: NSTableViewDelegate{
         return nil
     }
     
+    
     func tableViewSelectionDidChange(_ notification: Notification) {
         if tableView.selectedRow != -1 {
             let orp = ORPManager.sharedInstance.availableORPDataArray[tableView.selectedRow]
-            if orp.state() == .disconnected{
+            
+            if orp.state() == .disconnected {
                 ORPManager.sharedInstance.connect(orphe: orp)
+                
+                if Int32(orp.side.rawValue) == 0 {
+                    leftOrphe = orp;
+                }
+                else {
+                    rightOrphe = orp;
+                }
             }
-            else{
+            else {
                 ORPManager.sharedInstance.disconnect(orphe: orp)
             }
         }
     }
-    
 }
 
+
 extension ViewController: NSTableViewDataSource {
-    
     func numberOfRows(in tableView: NSTableView) -> Int {
         return ORPManager.sharedInstance.availableORPDataArray.count
     }
-    
-    
 }
 
-extension  ViewController: ORPManagerDelegate{
-    
+
+extension ViewController: ORPManagerDelegate {
     //MARK: - ORPManagerDelegate
-    func didUpdateBLEState(state:CBCentralManagerState){
+    func orpheDidUpdateBLEState(state:CBCentralManagerState){
         PRINT("didUpdateBLEState", state)
+        
         switch state {
         case .poweredOn:
             ORPManager.sharedInstance.startScan()
@@ -146,7 +168,8 @@ extension  ViewController: ORPManagerDelegate{
         }
     }
     
-    func didUpdateRSSI(orphe:ORPData){
+    
+    func orpheDidUpdateRSSI(orphe:ORPData){
         // print("didUpdateRSSI", orphe.RSSI)
         if let index = ORPManager.sharedInstance.availableORPDataArray.index(of: orphe){
             if let cell = tableView.view(atColumn: 1, row: index, makeIfNecessary: false) as? NSTableCellView{
@@ -155,58 +178,66 @@ extension  ViewController: ORPManagerDelegate{
         }
     }
     
-    func didDiscoverOprhe(orphe:ORPData){
+    
+    func orpheDidDiscoverOrphe(orphe:ORPData){
         PRINT("didDiscoverOprhe")
         tableView.reloadData()
         updateCellsState()
     }
     
-    func didDisappearOprhe(orphe:ORPData){
+    
+    func orpheDidDisappearOrphe(orphe:ORPData){
         PRINT("didDisappearOprhe")
         tableView.reloadData()
         updateCellsState()
     }
     
-    func didFailToConnect(orphe:ORPData){
+    
+    func orpheDidFailToConnect(orphe:ORPData){
         PRINT("didFailToConnect")
         tableView.reloadData()
         updateCellsState()
     }
     
-    func didDisconnect(orphe:ORPData){
+    
+    func orpheDidDisconnect(orphe:ORPData){
         PRINT("didDisconnect")
         tableView.reloadData()
         updateCellsState()
     }
     
-    func didConnect(orphe:ORPData){
+    
+    func orpheDidConnect(orphe:ORPData){
         PRINT("didConnect")
         tableView.reloadData()
         updateCellsState()
         
-        var orp = orphe
-        ORPManager.sharedInstance.changeScene(sceneNum: .SceneForSDK, orphe:&orp)
-        ORPManager.sharedInstance.setGestureSensitivity(sensitivity: .high, orphe:&orp)
+        orphe.setScene(ORPScene.sceneSDK)
+        orphe.setGestureSensitivity(ORPGestureSensitivity.high)
     }
     
-    func didUpdateOrpheInfo(orphe:ORPData){
+    
+    func orpheDidUpdateOrpheInfo(orphe:ORPData){
         PRINT("didUpdateOrpheInfo")
-        for var orp in ORPManager.sharedInstance.connectedORPDataArray {
+        
+        for orp in ORPManager.sharedInstance.connectedORPDataArray {
             if orp != orphe && orp.side == orphe.side{
-                ORPManager.sharedInstance.switchToOppositeSide(orphe: &orp)
+                orp.switchToOppositeSide()
                 PRINT("switch to opposite side")
             }
         }
     }
     
+    
     //MARK: - Others
     func readRSSI(){
-        for orp in ORPManager.sharedInstance.connectedORPDataArray {
-            orp.readRSSI()
+        for orphe in ORPManager.sharedInstance.connectedORPDataArray {
+            orphe.readRSSI()
         }
     }
     
-    func didUpdateSensorData(orphe: ORPData) {
+    
+    func orpheDidUpdateSensorData(orphe: ORPData) {
         let sideInfo:Int32 = Int32(orphe.side.rawValue)
         var text = ""
         let quat = orphe.getQuat()
@@ -229,10 +260,10 @@ extension  ViewController: ORPManagerDelegate{
             text +=  "Gyro\(i): "+String(g) + "\n"
         }
         
-        let mag = orphe.getMag()!
+        let mag = orphe.getMag()
         text +=  "Mag: "+String(mag) + "\n"
         
-        let shock = orphe.getShock()!
+        let shock = orphe.getShock()
         text += "Shock: "+String(shock) + "\n"
         
         // PitchBenderKnob (0 ~ 16383)
@@ -243,7 +274,7 @@ extension  ViewController: ORPManagerDelegate{
         if sideInfo == 0 {
             leftSensorLabel.stringValue = "LEFT\n\n" + text + "\n" + leftGesture
             
-            MIDIInterface.sharedInstance.ccPitchbendReceive(ch:0, pitchbendValue: knob)
+            MIDIInterface.sharedInstance.ccPitchbendReceive(ch:1, pitchbendValue: knob)
             calibrateFloor(sum: &calibrate_ltmp, cnt: &calibrate_lcnt, upper: &upper_euler_l0,
                            lower: &lower_euler_l0, euler: Double(euler[0]))
             changeColor(orphe: &mutOrphe!, knob: Int(knob))
@@ -251,14 +282,15 @@ extension  ViewController: ORPManagerDelegate{
         else{
             rightSensorLabel.stringValue = "RIGHT\n\n" + text + "\n" + rightGesture
             
-            MIDIInterface.sharedInstance.ccPitchbendReceive(ch:1, pitchbendValue: knob)
+            MIDIInterface.sharedInstance.ccPitchbendReceive(ch:2, pitchbendValue: knob)
             calibrateFloor(sum: &calibrate_rtmp, cnt: &calibrate_rcnt, upper: &upper_euler_r0,
                            lower: &lower_euler_r0, euler: Double(euler[0]))
             changeColor(orphe: &mutOrphe!, knob: Int(knob))
         }
     }
     
-    func didCatchGestureEvent(gestureEvent:ORPGestureEventArgs, orphe:ORPData) {
+    
+    func orpheDidCatchGestureEvent(gestureEvent:ORPGestureEventArgs, orphe:ORPData) {
         let side = orphe.side
         let kind = gestureEvent.getGestureKindString() as String
         let power = gestureEvent.getPower()
@@ -273,8 +305,6 @@ extension  ViewController: ORPManagerDelegate{
     }
     
     
-    
-    
     func getPitchbendValue(euler0:Double) -> UInt16 {
         var pitch = euler0 - upper_euler_l0
         if pitch < lower_euler_l0 {
@@ -287,6 +317,7 @@ extension  ViewController: ORPManagerDelegate{
         return pitchbendValue
     }
     
+    
     func changeColor(orphe:inout ORPData, knob:Int) {
         if times < 3 {
             times += 1
@@ -294,11 +325,12 @@ extension  ViewController: ORPManagerDelegate{
             let red = UInt8((knob + 5461) <= 10922 ? 255 - (255 * (knob + 5461) / 10922) : 0)
             let green = UInt8((knob - 5461) > 0 ? (255 * (knob - 5461) / 10922) : 0)
             
-            ORPManager.sharedInstance.setColorRGB(lightNum:0, red:red, green:green, blue:0, orphe:&orphe)
-            ORPManager.sharedInstance.switchLight(lightNum:0, flag:true, orphe:&orphe)
+            orphe.setColorRGB(lightNum:0, red:red, green:green, blue:0)
+            orphe.switchLight(lightNum:0, flag:true)
             times = 0
         }
     }
+    
     
     func calibrateFloor(sum:inout Double, cnt:inout Int, upper:inout Double, lower:inout Double, euler:Double) {
         PRINT(String(cnt))
