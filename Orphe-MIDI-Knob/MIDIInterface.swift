@@ -680,7 +680,7 @@ class MIDIInterface: NSObject {
         packet.timeStamp = MIDITimeStamp(AudioConvertHostTimeToNanos(AudioGetCurrentHostTime()))
         packet.length    = 3
         
-        packet.data.0    = UInt8(0xE0)                              // 0 is channel number
+        packet.data.0    = UInt8(0xE0 + ch - 1)                     // 0 is channel number
         packet.data.1    = UInt8(pitchbendValue & 0x007f)           // lowwer
         packet.data.2    = UInt8((pitchbendValue >> 7) & 0x007f)    // upper
         
