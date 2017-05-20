@@ -5,11 +5,13 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "5D9834C2248997F4FF0BCD60C4CB47DA22BE5E90" : 9223372036854775807,
+    "7DA15DC908C1ED7D32A092FCB360CC02E81372CB" : 9223372036854775807,
     "1A180FF53D7A83A55923940F7764A8C27D3CC607" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B8389029-DDAC-4FFA-AB7F-37778DE56983",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "5D9834C2248997F4FF0BCD60C4CB47DA22BE5E90" : "Orphe-Swift-SDK\/",
+    "7DA15DC908C1ED7D32A092FCB360CC02E81372CB" : "mastodon\/",
     "1A180FF53D7A83A55923940F7764A8C27D3CC607" : "Orphe-MIDI-Knob\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Orphe-MIDI-Knob",
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:no-new-folk\/Orphe-Swift-SDK.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5D9834C2248997F4FF0BCD60C4CB47DA22BE5E90"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:tootsuite\/mastodon.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7DA15DC908C1ED7D32A092FCB360CC02E81372CB"
     }
   ]
 }

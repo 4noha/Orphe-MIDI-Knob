@@ -9,12 +9,19 @@
 import Cocoa
 import Orphe
 import CoreMIDI
+import AVFoundation
 
 class ViewController: NSViewController {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var leftSensorLabel: NSTextField!
     @IBOutlet weak var rightSensorLabel: NSTextField!
     @IBOutlet weak var rightSwitchButton: NSButton!
+    @IBOutlet weak var ToggleTapButton: NSButton!
+    
+    var bassPlayer: AVAudioPlayer!
+    var hatPlayer: AVAudioPlayer!
+    let bassPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "bass", ofType: "aiff")!)
+    let hatPath = NSURL(fileURLWithPath: Bundle.main.path(forResource: "hat", ofType: "aiff")!)
     
     var rssiTimer: Timer?
     
@@ -36,6 +43,8 @@ class ViewController: NSViewController {
     var leftOrphe: ORPData?
     var rightOrphe: ORPData?
     
+    var tapMode = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,6 +54,15 @@ class ViewController: NSViewController {
         //let musicSequence = MIDIInterface.sharedInstance.createMusicSequence()
         //MIDIInterface.sharedInstance.createPlayer(musicSequence: musicSequence)
         //MIDIInterface.sharedInstance.startPlaying()
+        
+        //Dramns
+        do{
+            bassPlayer = try AVAudioPlayer(contentsOf: bassPath as URL)
+            hatPlayer = try AVAudioPlayer(contentsOf: hatPath as URL)
+        }
+        catch{}
+        bassPlayer.delegate = self as? AVAudioPlayerDelegate
+        hatPlayer.delegate = self as? AVAudioPlayerDelegate
         
         // View
         tableView.delegate = self
@@ -102,6 +120,17 @@ class ViewController: NSViewController {
             leftOrphe?.requestChangeSide(ORPSide.right)
             rightOrphe = leftOrphe
             leftOrphe = nil
+        }
+    }
+    
+    @IBAction func ToggleTapButtonAction(sender : AnyObject) {
+        tapMode = !tapMode
+        
+        if tapMode {
+            ToggleTapButton.title = "disable Tap Mode"
+        }
+        else {
+            ToggleTapButton.title = "enable Tap Mode"
         }
     }
 }
@@ -273,19 +302,23 @@ extension ViewController: ORPManagerDelegate {
         var mutOrphe = ORPManager.sharedInstance.getOrpheData(idNumber: orphe.idNumber);
         if sideInfo == 0 {
             leftSensorLabel.stringValue = "LEFT\n\n" + text + "\n" + leftGesture
-            
-            MIDIInterface.sharedInstance.ccPitchbendReceive(ch:1, pitchbendValue: knob)
             calibrateFloor(sum: &calibrate_ltmp, cnt: &calibrate_lcnt, upper: &upper_euler_l0,
                            lower: &lower_euler_l0, euler: Double(euler[0]))
             changeColor(orphe: &mutOrphe!, knob: Int(knob))
+            
+            if !tapMode {
+                MIDIInterface.sharedInstance.ccPitchbendReceive(ch:1, pitchbendValue: knob)
+            }
         }
         else{
             rightSensorLabel.stringValue = "RIGHT\n\n" + text + "\n" + rightGesture
-            
-            MIDIInterface.sharedInstance.ccPitchbendReceive(ch:2, pitchbendValue: knob)
             calibrateFloor(sum: &calibrate_rtmp, cnt: &calibrate_rcnt, upper: &upper_euler_r0,
                            lower: &lower_euler_r0, euler: Double(euler[0]))
             changeColor(orphe: &mutOrphe!, knob: Int(knob))
+            
+            if !tapMode {
+                MIDIInterface.sharedInstance.ccPitchbendReceive(ch:2, pitchbendValue: knob)
+            }
         }
     }
     
@@ -295,10 +328,16 @@ extension ViewController: ORPManagerDelegate {
         let kind = gestureEvent.getGestureKindString() as String
         let power = gestureEvent.getPower()
         if side == ORPSide.left {
+            if tapMode {
+                bassPlayer.play()
+            }
             leftGesture = "Gesture: " + kind + "\n"
             leftGesture += "power: " + String(power)
         }
         else{
+            if tapMode {
+                hatPlayer.play()
+            }
             rightGesture = "Gesture: " + kind + "\n"
             rightGesture += "power: " + String(power)
         }

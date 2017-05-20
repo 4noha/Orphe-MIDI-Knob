@@ -17,6 +17,13 @@
 		5B2D2D4A1E5C4691001F9EF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D2D491E5C4691001F9EF7 /* Main.storyboard */; };
 		5B2D2D4B1E5C4691001F9EF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D2D491E5C4691001F9EF7 /* Main.storyboard */; };
 		5B2D2D4C1E5C4691001F9EF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2D2D491E5C4691001F9EF7 /* Main.storyboard */; };
+		5B8BE2311ECFC14C00DDF363 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8BE2301ECFC14C00DDF363 /* AVFoundation.framework */; };
+		5B8BE2371ECFCAEF00DDF363 /* bass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BE2361ECFCAEF00DDF363 /* bass.aiff */; };
+		5B8BE2381ECFCAEF00DDF363 /* bass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BE2361ECFCAEF00DDF363 /* bass.aiff */; };
+		5B8BE2391ECFCAEF00DDF363 /* bass.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BE2361ECFCAEF00DDF363 /* bass.aiff */; };
+		5B8BE23B1ECFCE4900DDF363 /* hat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BE23A1ECFCE4900DDF363 /* hat.aiff */; };
+		5B8BE23C1ECFCE4900DDF363 /* hat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BE23A1ECFCE4900DDF363 /* hat.aiff */; };
+		5B8BE23D1ECFCE4900DDF363 /* hat.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 5B8BE23A1ECFCE4900DDF363 /* hat.aiff */; };
 		5BBF93251E5CF9A400EDCEC3 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBF93241E5CF9A400EDCEC3 /* CoreMIDI.framework */; };
 		5BBF93281E5D0F2700EDCEC3 /* MIDIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF93271E5D0F2700EDCEC3 /* MIDIInterface.swift */; };
 		5BBF93291E5D0F2700EDCEC3 /* MIDIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF93271E5D0F2700EDCEC3 /* MIDIInterface.swift */; };
@@ -71,6 +78,10 @@
 		5B2D2D2D1E5C41A5001F9EF7 /* Orphe_MIDI_KnobUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orphe_MIDI_KnobUITests.swift; sourceTree = "<group>"; };
 		5B2D2D2F1E5C41A5001F9EF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2D2D491E5C4691001F9EF7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5B8BE22E1ECFC0D100DDF363 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5B8BE2301ECFC14C00DDF363 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5B8BE2361ECFCAEF00DDF363 /* bass.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = bass.aiff; path = ../../../Desktop/bass.aiff; sourceTree = "<group>"; };
+		5B8BE23A1ECFCE4900DDF363 /* hat.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = hat.aiff; path = ../../../Desktop/hat.aiff; sourceTree = "<group>"; };
 		5BBF93241E5CF9A400EDCEC3 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = System/Library/Frameworks/CoreMIDI.framework; sourceTree = SDKROOT; };
 		5BBF93271E5D0F2700EDCEC3 /* MIDIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MIDIInterface.swift; sourceTree = "<group>"; };
 		5BBF933B1E5DA88100EDCEC3 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -81,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8BE2311ECFC14C00DDF363 /* AVFoundation.framework in Frameworks */,
 				5B0D57A61E96150100AB02C9 /* Orphe.framework in Frameworks */,
 				5BBF93251E5CF9A400EDCEC3 /* CoreMIDI.framework in Frameworks */,
 			);
@@ -128,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				5B2D2D101E5C41A5001F9EF7 /* AppDelegate.swift */,
+				5B8BE2361ECFCAEF00DDF363 /* bass.aiff */,
+				5B8BE23A1ECFCE4900DDF363 /* hat.aiff */,
 				5B2D2D121E5C41A5001F9EF7 /* ViewController.swift */,
 				5BBF933B1E5DA88100EDCEC3 /* WindowController.swift */,
 				5BBF93271E5D0F2700EDCEC3 /* MIDIInterface.swift */,
@@ -159,6 +173,8 @@
 		5B2D2D3B1E5C422D001F9EF7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B8BE2301ECFC14C00DDF363 /* AVFoundation.framework */,
+				5B8BE22E1ECFC0D100DDF363 /* AudioToolbox.framework */,
 				5B0D57A51E96150100AB02C9 /* Orphe.framework */,
 				5BBF93241E5CF9A400EDCEC3 /* CoreMIDI.framework */,
 			);
@@ -276,6 +292,8 @@
 			files = (
 				5B2D2D151E5C41A5001F9EF7 /* Assets.xcassets in Resources */,
 				5B2D2D4A1E5C4691001F9EF7 /* Main.storyboard in Resources */,
+				5B8BE23B1ECFCE4900DDF363 /* hat.aiff in Resources */,
+				5B8BE2371ECFCAEF00DDF363 /* bass.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8BE2381ECFCAEF00DDF363 /* bass.aiff in Resources */,
+				5B8BE23C1ECFCE4900DDF363 /* hat.aiff in Resources */,
 				5B2D2D4B1E5C4691001F9EF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +311,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8BE2391ECFCAEF00DDF363 /* bass.aiff in Resources */,
+				5B8BE23D1ECFCE4900DDF363 /* hat.aiff in Resources */,
 				5B2D2D4C1E5C4691001F9EF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
